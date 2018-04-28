@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+'use strict'
+let SHARM = 15;
+let HURGADA = 25;
+let TABA = 6;
+
+let needPlaces = prompt('введите нужное кол-во мест:');
+const input = Number(needPlaces);
+const isItValid = needPlaces !==null && !Number.isNaN(input);
+
+if(isItValid && input<=25){
+    let isGoingTaba = 'TABA';
+    let isGoingSharm = 'SHARM';
+    let isGoingHurgada = 'HURGADA';
+    
+    if (TABA>=input){
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingTaba}?`);
+    if(isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingTaba}! `);
+    TABA = TABA - input;}
+    else{
+    alert("Нам очень жаль, приходите еще!");
+    }}
+    else if(input >=SHARM && input <= SHARM){
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingSharm} ?`);
+    if(isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingSharm}! `);
+    SHARM = SHARM - input;}
+    else{
+    alert("Нам очень жаль, приходите еще!");
+    }}
+    else if(input >=HURGADA && input <= HURGADA) {
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingHurgada}?`);
+    if(isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingHurgada}! `);
+    HURGADA = HURGADA - input;}
+    else{
+    alert("Нам очень жаль, приходите еще!");
+    }}
+    else if(TABA<input && SHARM<input && HURGADA<input){
+        alert('Извините, мест нет.');
+    }
+}
+else if(input>25) { 
+        alert('Извините, мест нет.');
+    }  
+else{
+    alert('ошибка ввода!');
+}
+
+
+    
+</script>
+</body>
+</html>
