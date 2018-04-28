@@ -17,45 +17,80 @@ let needPlaces = prompt('введите нужное кол-во мест:');
 const input = Number(needPlaces);
 const isItValid = needPlaces !==null && !Number.isNaN(input);
 
-if(isItValid && input<=25){
+if(isItValid && input <= 25){
     let isGoingTaba = 'TABA';
     let isGoingSharm = 'SHARM';
     let isGoingHurgada = 'HURGADA';
     
-    if (TABA>=input){
+    if (TABA >= input){
     let isGoing = confirm(`согласны ли вы быть в группе ${isGoingTaba}?`);
+    
     if(isGoing === true){
     alert(`Приятного путешествия в группе ${isGoingTaba}! `);
-    TABA = TABA - input;}
-    else{
-    alert("Нам очень жаль, приходите еще!");
-    }}
-    else if(input > TABA && input <= SHARM){
-    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingSharm} ?`);
+    TABA = TABA - input;
+    }
+    else if(isGoing === false && input <= SHARM){ 
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingSharm}?`);
     if(isGoing === true){
     alert(`Приятного путешествия в группе ${isGoingSharm}! `);
-    SHARM = SHARM - input;}
+    SHARM = SHARM - input;
+    }
+    else if(isGoing === false && input <= HURGADA){ 
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingHurgada}?`);
+    if(isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingHurgada}! `);
+    HURGADA = HURGADA - input;
+    }
     else{
-    alert("Нам очень жаль, приходите еще!");
-    }}
+        alert("Нам очень жаль, приходите еще!");
+        }
+    }
+    }
+    }
+    
+    else if(input > TABA && input <= SHARM){
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingSharm} ?`);
+    
+    if(isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingSharm}!`);
+    SHARM = SHARM - input;
+    }
+    else if(isGoing === false && input <= HURGADA){
+    let isGoing = confirm(`согласны ли вы быть в группе ${isGoingHurgada} ?`); 
+    if  (isGoing === true){
+    alert(`Приятного путешествия в группе ${isGoingHurgada}! `);
+    HURGADA = HURGADA - input;
+    }
+    else{
+        alert("Нам очень жаль, приходите еще!");
+        }
+    }
+    }
+    
     else if(input > SHARM && input <= HURGADA) {
     let isGoing = confirm(`согласны ли вы быть в группе ${isGoingHurgada}?`);
     if(isGoing === true){
     alert(`Приятного путешествия в группе ${isGoingHurgada}! `);
-    HURGADA = HURGADA - input;}
+    HURGADA = HURGADA - input;
+    }
     else{
     alert("Нам очень жаль, приходите еще!");
-    }}
-    else if(TABA<input && SHARM<input && HURGADA<input){
-        alert('Извините, мест нет.');
     }
-}
-else if(input>25) { 
+    }
+    
+    else if(TABA < input && SHARM < input && HURGADA < input){
         alert('Извините, мест нет.');
-    }  
+        }
+    
+}
+else if(input > 25) { 
+        alert('Извините, мест нет.');
+        }
+ 
 else{
     alert('ошибка ввода!');
-}
+    }
+
 
 
     
