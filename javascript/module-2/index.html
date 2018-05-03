@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+'use strict'
+
+const numbers = [];
+let total = 0;
+let userInput;
+//const isValid = userInput !==null && !Number.isNaN(userInput);
+
+do {userInput = prompt('введите произвольное число:');
+if (!isNaN(userInput) && userInput !== null){
+    numbers.push(userInput);}
+else if(userInput === null){
+    alert('thanks man for the input');
+}
+else {alert('Было введено не число, попробуйте еще раз');
+}
+}
+while (userInput !== null);
+
+for ( let i = 0; i < numbers.length; i += 1){
+total = total + parseInt(numbers[i]);
+}
+
+console.log(numbers);
+
+//console.log(isNaN(userInput));
+
+alert(`Общая сумма чисел равна ${total}!`);
+
+</script>
+</body>
+</html>
