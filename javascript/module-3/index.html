@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+'use strict'
+
+const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+
+
+const checkLoginValidity = function(login){
+    if(login.length >= 4 && login.length <= 16)
+      {
+        return true;
+      }
+    else{
+      return false;
+      }
+  }
+const checkIfLoginExists = function(login){
+  if (logins.includes(login)){
+    return true;
+  }
+   else{
+     return false;
+   }
+}
+
+const addLogin = function (logins, login) {
+  
+  if(checkLoginValidity(login)){
+    if(checkIfLoginExists(login))
+    {
+      return alert('Такой логин уже используется!');
+    }
+    else {
+      alert('Логин успешно добавлен!');
+      return logins.push(login);
+    }
+  }
+    else{
+      return alert('Ошибка! Логин должен быть от 4 до 16 символов');
+    }
+}
+let enter = prompt('введите свой логин');
+if(true) {
+  addLogin(logins, enter);
+ }
+
+        
+        
+        
+</script>
+</body>
+</html>
