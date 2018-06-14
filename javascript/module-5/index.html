@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 05</title>
+</head>
+<body>
+<script>
+
+'use strict'
+
+const initialUsers = [
+  { id: "-s19a6hqce", login: "mangozedog@mail.com", password: "qwe123zv", isActive: true },
+  { id: "-qkpzenjxe", login: "polysweet@skynet.ze", password: "123zxc78", isActive: true },
+  { id: "-e51cpd4di", login: "ajax2k@change.ua", password: "ert234qw", isActive: false }
+];
+
+const initialPosts = {
+  "-s19a6hqce": [
+    { id: "-5sgljaskg", text: "post #1", likes: 3 },
+    { id: "-199hb6igr", text: "post #2", likes: 5 },
+    { id: "-hy0eyw5qo", text: "post #3", likes: 13 }
+  ],
+  "-qkpzenjxe": [
+    { id: "-5tu69g5rf", text: "post #1", likes: 8 },
+    { id: "-bje766393", text: "post #2", likes: 15 }
+  ],
+  "-e51cpd4di": [
+    { id: "-9y6nkmlj4", text: "post #1", likes: 18 },
+    { id: "-i03pbhy3s", text: "post #2", likes: 45 }
+  ],
+};
+
+const getId = () => "-" + Math.random().toString(36).substr(2, 9);
+
+function SocialBook(users = [], posts = {}) {
+  this.users = users;
+  this.posts = posts;
+
+this.getAllUsers = () => this.users;
+
+this.getUserByLogin = login => {
+  return this.users.find(elem => elem.login === login);
+};
+
+this.isUserActive = userId => {
+  const user = this.users.find(x => x.id === userId);
+  return user.isActive ? 'user is online' : 'user is offline';
+};
+
+this.getActiveUsers = () => {
+const ActiveUsers = this.users.filter(user => user.isActive);
+return ActiveUsers;
+};  
+
+this.addUser = user => {
+  user.id = getId();
+  user.isActive = false;
+  this.users.push(user);
+};
+
+this.removeUserById = userId => {
+return this.users = this.users.filter(elem => elem.id !== userId);
+};
+
+this.getUsersCount = () => this.users.length;
+
+
+this.getUserPosts = userId => {return this.posts[userId];};
+
+this.addPost = (userId, post) => this.posts[userId].push(post);
+
+this.removePost = (userId, postId) => {
+return this.posts[userId] = this.posts[userId].filter(elem => elem.id !== postId);
+};
+
+this.getAllLikes = userId => {
+let userPosts = this.posts[userId];
+return userPosts.reduce((acc, numb) => acc + numb.likes, 0);
+};
+this.addPostLike = (userId, postId) => {
+  this.posts[userId].forEach(elem => {
+    if(elem.id === postId){
+      elem.likes += 1;
+    }
+  });
+} 
+this.getPostsCount = userId => {return this.posts[userId].length};
+
+}
+
+const webnet = new SocialBook(initialUsers, initialPosts);
+
+console.log(webnet.getAllUsers());
+console.log(webnet.getUserByLogin('mangozedog@mail.com'));
+console.log(webnet.isUserActive('-s19a6hqce'));
+console.log(webnet.isUserActive('-e51cpd4di'));
+console.log(webnet.getActiveUsers());  
+webnet.addUser({email:'cool@gmail.com', password:'margarin'});
+console.log(webnet.users);
+console.log(webnet.removeUserById('-qkpzenjxe'));  
+console.log(webnet.getUsersCount());
+console.log(webnet.getUserPosts('-qkpzenjxe'));
+webnet.addPost('-qkpzenjxe', {id: getId(), text:'hi, Im Jane', likes: 17, });
+console.log(webnet.posts);
+webnet.removePost('-s19a6hqce', '-hy0eyw5qo');
+console.log(webnet.posts);
+console.log(webnet.getAllLikes('-e51cpd4di'));
+webnet.addPostLike('-e51cpd4di', '-i03pbhy3s');
+console.log(webnet.posts);
+console.log(webnet.getPostsCount('-s19a6hqce'));
+
+  
+</script>
+</body>
+</html>
