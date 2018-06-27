@@ -1,5 +1,15 @@
 'use strict'
+/*1. Модифицируйте готовую функцию createPostCard() из задания 
+номер 6 (https://codepen.io/goit-fe-adv/pen/MVPaeZ) так, 
+чтобы она принимала объект post с данными для заполнения полей 
+в карточке.
+  
+2. Создайте функцию createCards(posts), которая принимает массив
+объектов-карточек, вызывает функцию createPostCard(post) столько
+раз, сколько объектов в массиве, сохраняя общий результат и возвращает 
+массив DOM-элементов всех постов.
 
+3. Повесьте все посты в какой-то уже существующий DOM-узел.*/
 const posts = [
     {
       img: "https://placeimg.com/400/150/arch",
@@ -50,7 +60,7 @@ const posts = [
    text.classList.add('post__text');
    text.textContent = el.text;
 
-   const button = document.createElement('button');
+   const button = document.createElement('a');
    button.classList.add('button');
    button.textContent = 'Read more';
    button.setAttribute('href', el.link);
