@@ -1,0 +1,30 @@
+.preview {
+padding-left: 15px;
+padding-right: 15px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+list-style: none;
+}
+body {
+  margin: 0%;
+  width: 100%;
+  padding-top: 10px;
+  background-image: url('../img/body.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  overflow-x:hidden;
+  
+}
+.preview img{
+  display: block;
+  max-width:250px;
+  height: 100px;
+}
+.fullview{
+max-width: 1280px;
+margin-left: auto;
+margin-right: auto;
+box-shadow: lemonchiffon;
+}
