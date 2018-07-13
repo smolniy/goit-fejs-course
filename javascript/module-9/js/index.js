@@ -7,11 +7,13 @@ const reset = document.querySelector('.js-reset');
 let laps = document.querySelector('.js-laps');
 let stroke = document.querySelectorAll('li');
 let timerId = null;
+let newTimerId = null;
 let isActive = false;
 
 let startTime = Date.now();
 let deltaTime = 0;
-let stopTime;
+let stopTime = 0;
+let timeNow = null;
 
 let minutes;
 let seconds;
@@ -38,18 +40,31 @@ function handleStart(){
 }
 
 function updateValue(){
-  const currentTime = Date.now();
+  let currentTime = Date.now();
   deltaTime = currentTime - startTime;
-  const timeNow = new Date(deltaTime);
+  timeNow = new Date(deltaTime);
   minutes = timeNow.getMinutes();
   seconds = timeNow.getSeconds();
   milliseconds = Number.parseInt(timeNow.getMilliseconds() / 100 );
   time.textContent = `${minutes}:${seconds}.${milliseconds}`;
+  
 }
 
 function handlePause() {
   clearInterval(timerId);
   start.textContent = 'continue';
-  isActive = true;
+  isActive = false;
   stopTime = Date.now();
-};  
+  newTimerId = setInterval(updateValueAfterPause, 100);
+  
+}  
+function updateValueAfterPause() {
+  clearInterval(newTimerId);
+  //stopTime = Date.now();
+  deltaTime= stopTime - startTime;
+  timeNow = new Date(deltaTime); 
+  minutes = timeNow.getMinutes();
+  seconds = timeNow.getSeconds();
+  milliseconds = Number.parseInt(timeNow.getMilliseconds() / 100 );
+  time.textContent = `${minutes}:${seconds}.${milliseconds}`;
+}
