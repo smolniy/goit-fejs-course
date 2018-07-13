@@ -22,8 +22,8 @@ let milliseconds;
 reset.disabled = true;
 lap.disabled = true;
 start.addEventListener('click', handleStart);
-lap.addEventListener('click', handleLap);
-reset.addEventListener('click', handleReset);
+//lap.addEventListener('click', handleLap);
+//reset.addEventListener('click', handleReset);
 
 function handleStart(){
   if(!isActive){
