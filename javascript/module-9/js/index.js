@@ -54,17 +54,4 @@ function handlePause() {
   clearInterval(timerId);
   start.textContent = 'continue';
   isActive = false;
-  stopTime = Date.now();
-  newTimerId = setInterval(updateValueAfterPause, 100);
-  
 }  
-function updateValueAfterPause() {
-  clearInterval(newTimerId);
-  //stopTime = Date.now();
-  deltaTime= stopTime - startTime;
-  timeNow = new Date(deltaTime); 
-  minutes = timeNow.getMinutes();
-  seconds = timeNow.getSeconds();
-  milliseconds = Number.parseInt(timeNow.getMilliseconds() / 100 );
-  time.textContent = `${minutes}:${seconds}.${milliseconds}`;
-}
