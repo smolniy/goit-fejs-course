@@ -1,0 +1,48 @@
+.container{
+max-width: 940px;
+margin-right: auto;
+margin-left: auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.btn{
+    width: 188px;
+    height: auto;
+    background-color: olivedrab;
+    font-size: 25px;
+    color: lightcyan;
+}
+
+input{
+    width:184px;
+    background-color: cornsilk;
+    font-weight: 600;
+    text-align: center; 
+}
+.js-results{
+display: block;
+max-width: 900px;
+margin-right: auto;
+margin-left: auto;
+font-size: 20px;
+color: red;
+text-align: center;
+list-style: none;
+border: 3px solid crimson;
+background-color: cornsilk;
+padding-right: 30px;
+}
+button{
+    cursor: pointer;
+    border: 0;
+    
+}
+button:hover{
+    color: greenyellow;
+}
+
+.new{
+    padding-top: 10px;
+}

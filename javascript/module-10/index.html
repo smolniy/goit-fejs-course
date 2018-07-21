@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home work 10</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="btn new">
+    <form>
+    <button class="btn js-get-users" type="submit">Get <br> All <br> Users</button>
+    </form>
+  </div>
+    
+  <div class="btn">
+    <form>
+    <button class="btn js-get-by-id" type="submit">Get User By Id</button>
+     <input type="text" class="get-by-id" required placeholder="Enter id*">
+    </form>
+    </div>
+    
+    <div class="btn">
+      <form>
+      <button class="btn js-add-user" type="submit">Add User</button>
+      <input type="text" class="add-user-name" required placeholder="Enter Name*">
+      <input type="text" class="add-user-age" required placeholder="Enter age*">
+    </form>
+    </div>
+    
+    <div class="btn">
+      <form>
+      <button class="btn js-remove-user" type="submit">Remove User</button>
+      <input type="text" class="remove-user" required placeholder="Enter id*">
+    </form>
+    </div>
+    
+    <div class="btn">
+      <form>
+      <button class="btn js-edit-user" type="submit">Edit User</button>
+      <input type="text" class="edit-user-id" required placeholder="Enter id*">
+      <input type="text" class="edit-user-name" required placeholder="Enter name*">
+      <input type="text" class="edit-user-age" required placeholder="Enter age*">
+    </form>
+    </div>
+    <ul class="js-results"></ul>
+  </div>
+  
+    
+    
+    <script src="js/index.js"></script> 
+</body>
+</html>
