@@ -1,0 +1,23 @@
+.notebook{
+    display: block;
+    width:550px;
+    height: auto;
+    border: 1px solid gray;
+    margin-top: 40px;
+    font-size: 18px;
+    color: darkolivegreen;
+    background-color: lightgoldenrodyellow;
+    text-align: center; 
+}
+
+#notebook{
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 30px;
+    right: 300px;
+}
