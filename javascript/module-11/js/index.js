@@ -7,7 +7,7 @@ const reset = document.querySelector('.reset');
 //const newVisual = document.querySelector('.notebook');
 
 createFilter.addEventListener('click', handleFilter);
-reset.addEventListener('reset', formReset);
+reset.addEventListener('click', formReset);
 
 
 let newFill = [];
@@ -104,7 +104,7 @@ const laptops = [
   },
 ];
 
-const filtered = { size: [], color: [], release_date: [] };
+let filtered = { size: [], color: [], release_date: [] };
 
 function handleFilter(event){
    event.preventDefault();  
@@ -143,24 +143,23 @@ function handleFilter(event){
     let notebook = document.getElementById('notebook');
     notebook.insertAdjacentHTML('afterbegin',  markup);
     
-    filterReset();
+    
 }
 
 function formReset(event) {
   filterReset();
   form.reset();
-  //visual.innerHTML = '';
-  //newVisual.innerHTML = '';
   newFill = [];
-  
-  
 }
+
 function filterReset() {
-  filtered.size = [];
-  filtered.color = [];
-  filtered.release_date = [];
-  newFill = [];
-  
+  filtered = {
+    size: [],
+    color: [],
+    release_date: []
+  };
+  //newFill = [];
+  notebook.innerHTML = '';
 }
 
   
