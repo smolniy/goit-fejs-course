@@ -108,6 +108,7 @@ let filtered = { size: [], color: [], release_date: [] };
 
 function handleFilter(event){
    event.preventDefault();  
+   filterReset();
    
    const inputs = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
    let filtered = inputs.reduce((acc, input) =>{
@@ -158,7 +159,7 @@ function filterReset() {
     color: [],
     release_date: []
   };
-  //newFill = [];
+  newFill = [];
   notebook.innerHTML = '';
 }
 
