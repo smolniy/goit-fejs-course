@@ -35,22 +35,24 @@
     </section>
     <button class="filter" type="submit">Filter</button>
     <button class="reset" type="reset">Clear</button>
-    </form>
     
-    <div id="notebook"></div>
-    <template id="laptop">
-    {{#each this}}
-    <div class="notebook">
-    <p>size: {{size}}</p>
-    <p>color: {{color}}</p>
-    <p>price: {{price}}</p>
-    <p>release date: {{release_date}}</p>
-    <p>name: {{name}}</p>
-    <img src="{{img}}" alt="">
-    <p>describtion: {{descr}}</p>
-    </div>
-    {{/each}}
-    </template>
+    
+  </form>
+  <div id="notebook"></div>
+  <template id="laptop">
+  {{#each this}}
+  <div class="notebook">
+  <p>size: {{size}}</p>
+  <p>color: {{color}}</p>
+  <p>price: {{price}}</p>
+  <p>release date: {{release_date}}</p>
+  <p>name: {{name}}</p>
+  <img src="{{img}}" alt="">
+  <p>describtion: {{descr}}</p>
+  </div>
+  {{/each}}
+  </template>
+   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="js/index.js"></script> 
 </body>
