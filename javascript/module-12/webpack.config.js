@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/app.js'],
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
@@ -19,32 +19,12 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'],
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.hbs$/,
         exclude: /node_modules/,
-        use: ['handlebars-loader'],
+        use: 'handlebars-loader',
       },
     ],
   },
@@ -59,13 +39,4 @@ module.exports = {
       filename: 'styles.css',
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-    noInfo: false,
-    quiet: false,
-    stats: 'errors-only',
-    clientLogLevel: 'warning',
-    compress: true,
-    port: 9002,
-  },
 };
