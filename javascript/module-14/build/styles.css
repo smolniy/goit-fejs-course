@@ -1,0 +1,79 @@
+.wrapper {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.url-finder  {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0.5rem grey;
+}
+
+.input {
+  height: 2.5rem;
+  font-size: 2rem;
+}
+
+.addButton {
+  background: black;
+  color: white;
+  border: none;
+  height: 2.5rem;
+  font-size: 2rem
+}
+
+.addButton:hover{
+  cursor: pointer;
+  color: greenyellow;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.link-wrapper {
+  max-width: 500px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+  border: 1px solid wheat; 
+}
+.link-wrapper:hover{
+  cursor: pointer;
+  background-color: greenyellow; 
+}
+
+.link-content {
+  word-wrap: break-word;
+  font-size: 1.5rem;
+  flex: 0 0 70%;
+  margin-bottom: 0.5rem;
+}
+
+.remove-btn{
+  margin-left: auto;
+  width: 80px;
+  height: 40px;
+  border: none;
+  flex: 0 0 30%
+}
+.remove-btn:hover{
+  background: red;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

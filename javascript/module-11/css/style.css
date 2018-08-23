@@ -31,6 +31,7 @@
     margin-right: auto;
     display: flex;
     justify-content: space-around;
+    
 }
 img{
     width:300px;
@@ -38,5 +39,14 @@ img{
 }
 .fltr{
 width: 110px;
+}
 
+p{
+    display: block;
+    color:black;
+    font-size: 15px;
+    margin-left: 10px;
+}
+p span{
+color: red;
 }
